@@ -3,6 +3,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 export type RootNavigatorParamList = {
   Home: undefined;
   Product: { id: number };
+  Splash: undefined;
 };
 
 export type RootStackScreenProps<T extends keyof RootNavigatorParamList> =
