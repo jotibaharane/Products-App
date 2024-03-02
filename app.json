@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "product app",
+    "name": "product-app",
     "slug": "product-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -18,8 +18,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.products"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
