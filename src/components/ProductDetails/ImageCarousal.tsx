@@ -43,6 +43,7 @@ const ImageCarousal: FC<{ data: Product | undefined }> = ({ data }) => {
       <View className='flex-row justify-center mt-2'>
         {data?.images.map((_, index) => (
           <View
+            // eslint-disable-next-line react/no-array-index-key
             key={index}
             className={classNames(
               'w-2 h-2 rounded mx-1',

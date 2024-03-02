@@ -8,6 +8,7 @@ const SkeletonProductDetails = () => {
   const placeholderImages = Array(5).fill(null);
   const placeholderDots = placeholderImages.map((_, index) => (
     <View
+      // eslint-disable-next-line react/no-array-index-key
       key={index}
       className={classNames(
         'w-2 h-2 rounded mx-1',
