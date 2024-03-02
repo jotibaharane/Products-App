@@ -1,10 +1,9 @@
-import { RootNavigatorParamList } from '@/navigation/type';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
 import React, { useEffect } from 'react';
-import { View } from 'react-native';
-import * as Animatable from 'react-native-animatable';
-type Props = NativeStackScreenProps<RootNavigatorParamList, 'Splash'>;
-const Splash = ({ navigation }: Props) => {
+import { Text, View } from 'react-native';
+
+const Splash = () => {
+  const navigation = useNavigation();
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate('Home');
@@ -12,13 +11,7 @@ const Splash = ({ navigation }: Props) => {
   }, []);
   return (
     <View className='flex-1 items-center justify-center bg-[#90ee90]'>
-      <Animatable.Text
-        duration={2000}
-        animation='zoomIn'
-        className='text-6xl font-bold text-green-700'
-      >
-        Products
-      </Animatable.Text>
+      <Text className='text-6xl font-bold text-green-700'>Products</Text>
     </View>
   );
 };
