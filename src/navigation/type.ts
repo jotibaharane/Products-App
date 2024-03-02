@@ -1,7 +1,5 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-type PageParams = { pageId: number };
-
 export type RootNavigatorParamList = {
   Home: undefined;
   Product: { id: number };

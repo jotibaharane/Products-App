@@ -12,3 +12,10 @@ export type Product = {
   images: string[];
 };
 export type ProductsArray = Product[];
+
+export interface ProductResponse {
+  products: Product[];
+  total: number;
+  skip: number;
+  limit: number;
+}

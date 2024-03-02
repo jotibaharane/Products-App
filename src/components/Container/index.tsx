@@ -1,12 +1,14 @@
+import classNames from 'classnames';
 import { StatusBar } from 'expo-status-bar';
 import React, { ReactNode } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 interface ContainerProps {
   children: ReactNode;
+  className?: string;
 }
-const Container: React.FC<ContainerProps> = ({ children }) => {
+const Container: React.FC<ContainerProps> = ({ children, className }) => {
   return (
-    <SafeAreaView className='pt-8 bg-white dark:bg-neutral-900'>
+    <SafeAreaView className={classNames('flex-1 bg-white', className)}>
       <StatusBar />
       {children}
     </SafeAreaView>

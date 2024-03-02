@@ -3,54 +3,46 @@ import React, { FC } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 interface ProductCardProps {
   item: Product;
-  onPress: () => void; // Define onPress event handler
+  onPress: () => void;
 }
 
-const ProductCard: FC<ProductCardProps> = ({ item }) => {
+const ProductCard: FC<ProductCardProps> = ({ item, onPress }) => {
   return (
     <TouchableOpacity
       className='mb-4 mx-4 space-y-1'
       key={item?.id}
-      onPress={() => ''}
+      onPress={onPress}
     >
-      <View className='flex-row justify-start w-[100%]shadow-sm'>
-        {/* Image */}
-        <View className='items-start justify-start w-[20%]'>
+      <View className='flex-row justify-start w-full shadow-sm'>
+        <View className='items-start justify-start w-1/5'>
           <Image
             source={{
-              uri:
-                item?.thumbnail ||
-                'https://images.unsplash.com/photo-1495020689067-958852a7765e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmV3c3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60',
+              uri: item?.thumbnail,
             }}
             resizeMode='cover'
-            className='rounded-lg w-20 h-20'
+            className='rounded-lg w-20 h-28'
           />
         </View>
-
-        {/* Content */}
-
-        <View className='w-[70%] pl-4 justify-center space-y-1'>
-          {/* Author */}
-          <Text className='text-xs font-bold text-gray-900 dark:text-neutral-300'>
+        <View className='w-3/4 pl-8 justify-start items-start '>
+          <Text className='text-xs font-bold text-gray-900 '>
             {item?.brand}
           </Text>
-
-          {/* Title */}
-          <Text className='text-neutral-800 capitalize max-w-[90%] dark:text-white '>
+          <Text className='text-neutral-800 capitalize max-w-[90%] '>
             {item?.title}
           </Text>
-
-          {/* Date */}
-
-          <Text className='text-xs text-gray-700 dark:text-neutral-300'>
-            {item?.description}
-          </Text>
-          <Text className='text-xs text-gray-700 dark:text-neutral-300'>
-            {'\u20B9'} {item?.price}
-          </Text>
+          <Text className='text-xs text-gray-700'>{item?.description}</Text>
+          <View className='flex flex-row gap-2 items-center'>
+            <Text className='text-xs text-gray-700 font-bold '>
+              {`${'\u20B9'}${item?.price}`}
+            </Text>
+            <Text className='text-xs text-green-600 '>
+              {`${`\u2193`}${item?.discountPercentage}%`}
+            </Text>
+            <Text className='text-xs text-yellow-600 '>
+              {`${`\u2605`}${item?.rating}`}
+            </Text>
+          </View>
         </View>
-
-        {/* Bookmark */}
       </View>
     </TouchableOpacity>
   );
