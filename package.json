@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "clean": "if exist android\\app\\build (rd /s /q android\\app\\build) && if exist ios\\build (rd /s /q ios\\build)",
     "start": "expo start --dev-client",
     "dev": "expo start",
     "android": "expo run:android",
